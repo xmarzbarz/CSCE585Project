@@ -1,4 +1,3 @@
-#Three Way Split method
 import argparse
 import os
 import random
@@ -75,7 +74,6 @@ def apply_scaler(data, scaler):
 
 
 def build_windows(data, train_end, validation_end, lookback, horizon, max_samples, include_stockout_targets, split):
-    """Create chronological input/label windows for training or validation."""
     sequences, stores, products, labels = [], [], [], []
     groups = list(data.groupby(["city_id", "store_id", "product_id"], sort=False))
     random.Random(RANDOM_SEED).shuffle(groups)
